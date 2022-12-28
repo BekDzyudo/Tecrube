@@ -52,10 +52,12 @@ body {
   max-width: 1440px;
   margin: 0px auto; }
   .parent_container .header {
-    height: 754px;
+    min-height: 754px;
+    width: 100%;
     background-image: url(../images/header_logo.png);
     background-repeat: no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    background-position: center center; }
     .parent_container .header .container {
       max-width: 1200px;
       margin: 0px auto; }
@@ -67,7 +69,22 @@ body {
         display: flex;
         -webkit-box-pack: end;
         -ms-flex-pack: end;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-column-gap: 40px;
+        column-gap: 40px; }
+        .parent_container .header .container nav button {
+          padding: 10px 20px;
+          background-color: #f8464a;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px; }
+        .parent_container .header .container nav .menu {
+          display: none;
+          width: 32px;
+          height: 32px; }
         .parent_container .header .container nav ul {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -80,10 +97,7 @@ body {
             line-height: 20px;
             color: #000000; }
             .parent_container .header .container nav ul li a:hover {
-              padding: 10px 20px;
-              background-color: #f84646;
-              color: #ffffff;
-              border-radius: 5px; }
+              color: #f84646; }
       .parent_container .header .container .header_title {
         max-width: 665px; }
         .parent_container .header .container .header_title h1 {
@@ -137,6 +151,8 @@ body {
               line-height: 36px;
               letter-spacing: 0.2px;
               color: rgba(0, 0, 0, 0.4); }
+          .parent_container .header .container .header_title form .head_btn {
+            display: none; }
           .parent_container .header .container .header_title form button {
             width: 136px;
             height: 61px;
@@ -300,28 +316,32 @@ body {
       -webkit-column-gap: 170px;
       column-gap: 170px;
       margin-bottom: 120px; }
-      .parent_container .third_sec .third_container .left_card h1 {
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 76px;
-        color: #2e2e2e;
-        margin-bottom: 40px; }
-      .parent_container .third_sec .third_container .left_card p {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 32px;
-        color: #808080;
-        margin-bottom: 80px; }
-      .parent_container .third_sec .third_container .left_card button {
-        width: 160px;
-        height: 48px;
-        background: #f84646;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 24px;
-        color: #ffffff;
-        border: none; }
+      .parent_container .third_sec .third_container .left_card {
+        max-width: 500px; }
+        .parent_container .third_sec .third_container .left_card h1 {
+          font-weight: 700;
+          font-size: 64px;
+          line-height: 76px;
+          color: #2e2e2e;
+          margin-bottom: 40px; }
+        .parent_container .third_sec .third_container .left_card p {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 32px;
+          color: #808080;
+          margin-bottom: 80px; }
+        .parent_container .third_sec .third_container .left_card button {
+          width: 160px;
+          height: 48px;
+          background: #f84646;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 24px;
+          color: #ffffff;
+          border: none; }
+      .parent_container .third_sec .third_container .right_card {
+        max-width: 500px; }
   .parent_container .four_sec {
     background: #f4f5f7; }
     .parent_container .four_sec .container {
@@ -360,6 +380,21 @@ body {
           margin-bottom: 48px; }
       .parent_container .four_sec .four_container .four_img {
         margin-bottom: 60px; }
+        .parent_container .four_sec .four_container .four_img .four_row {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .parent_container .four_sec .four_container .four_img .four_row .four_card {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column; }
   .parent_container .five_sec {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -486,7 +521,28 @@ body {
     padding: 0px 50px; }
   .third_sec .container {
     padding: 0px 50px; }
+  .third_sec .third_container {
+    -webkit-column-gap: 50px;
+    column-gap: 50px; }
   .four_sec .container {
+    padding: 0px 50px; }
+  .four_sec .four_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .four_sec .four_container .four_row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      row-gap: 0px; }
+      .four_sec .four_container .four_row img:nth-child(1) {
+        margin-bottom: 50px; }
+  .five_sec .container {
     padding: 0px 50px; }
   .footer .container {
     padding: 0px 50px; } }
@@ -495,6 +551,160 @@ body {
   .main .container .first_sec .first_cards {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr); }
+  .second_sec .second_desc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    row-gap: 30px; }
+    .second_sec .second_desc .card {
+      text-align: center; }
   .third_sec .third_container {
-    -webkit-column-gap: 52px;
-    column-gap: 52px; } }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 50px; }
+    .third_sec .third_container .right_card img {
+      contain: content; }
+    .third_sec .third_container .left_card_2 {
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2; }
+    .third_sec .third_container .right_card_2 {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1; }
+    .third_sec .third_container .left_card p {
+      margin-bottom: 10px; }
+  .footer .foot_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 50px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .footer .foot_container .list_foot {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      row-gap: 50px; }
+    .footer .foot_container .link_foot {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      row-gap: 70px; }
+      .footer .foot_container .link_foot img {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1; }
+      .footer .foot_container .link_foot p {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2; } }
+
+@media screen and (max-width: 850px) {
+  .header .container {
+    padding: 0px 10px; }
+    .header .container nav {
+      padding-top: 45px;
+      margin-bottom: 135px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .header .container nav .menu {
+        display: block; }
+      .header .container nav button {
+        padding: 10px 20px;
+        background-color: #f8464a;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px; }
+      .header .container nav ul {
+        display: none; }
+    .header .container .header_title {
+      max-width: 665px; }
+      .header .container .header_title h1 {
+        color: #000000;
+        margin-bottom: 30px;
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 58px; }
+      .header .container .header_title p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #000000;
+        margin-bottom: 43px; }
+      .header .container .header_title form {
+        margin-bottom: 84px;
+        position: relative; }
+        .header .container .header_title form input {
+          max-width: 335px;
+          height: 60px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: none;
+          padding-left: 20px; }
+          .header .container .header_title form input::-webkit-input-placeholder {
+            font-family: "Manrope";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            color: rgba(0, 0, 0, 0.4); }
+          .header .container .header_title form input:-ms-input-placeholder {
+            font-family: "Manrope";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            color: rgba(0, 0, 0, 0.4); }
+          .header .container .header_title form input::-ms-input-placeholder {
+            font-family: "Manrope";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            color: rgba(0, 0, 0, 0.4); }
+          .header .container .header_title form input::placeholder {
+            font-family: "Manrope";
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            color: rgba(0, 0, 0, 0.4); }
+        .header .container .header_title form .head_btn {
+          display: block;
+          width: 90px;
+          height: 50px;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 36px;
+          letter-spacing: 0.2px;
+          background: #f84646;
+          border-radius: 8px;
+          color: white;
+          border: none; }
+        .header .container .header_title form button {
+          display: none; } }
+
+@media screen and (max-width: 800px) {
+  .main .container .first_sec .first_cards {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr); } }

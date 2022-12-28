@@ -49,18 +49,18 @@ body {
 }
 .parent_container {
   max-width: 1440px;
-  //   border: 1px solid red;
   margin: 0px auto;
 
   .header {
-    height: 754px;
+    min-height: 754px;
+    width: 100%;
     background-image: url(../images/header_logo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 
     .container {
       max-width: 1200px;
-      //   border: 1px solid blue;
       margin: 0px auto;
 
       nav {
@@ -68,6 +68,20 @@ body {
         margin-bottom: 135px;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
+        column-gap: 40px;
+        button {
+          padding: 10px 20px;
+          background-color: #f8464a;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+        }
+        .menu {
+          display: none;
+          width: 32px;
+          height: 32px;
+        }
         ul {
           display: flex;
           column-gap: 40px;
@@ -78,10 +92,7 @@ body {
               line-height: 20px;
               color: #000000;
               &:hover {
-                padding: 10px 20px;
-                background-color: #f84646;
-                color: #ffffff;
-                border-radius: 5px;
+                color: #f84646;
               }
             }
           }
@@ -122,6 +133,9 @@ body {
               letter-spacing: 0.2px;
               color: rgba(0, 0, 0, 0.4);
             }
+          }
+          .head_btn {
+            display: none;
           }
           button {
             width: 136px;
@@ -279,7 +293,6 @@ body {
     justify-content: center;
     .container {
       max-width: 1200px;
-      //   border: 1px solid blue;
     }
     .third_container {
       display: flex;
@@ -287,6 +300,7 @@ body {
       column-gap: 170px;
       margin-bottom: 120px;
       .left_card {
+        max-width: 500px;
         h1 {
           font-weight: 700;
           font-size: 64px;
@@ -312,6 +326,9 @@ body {
           color: #ffffff;
           border: none;
         }
+      }
+      .right_card {
+        max-width: 500px;
       }
     }
   }
@@ -352,6 +369,14 @@ body {
       }
       .four_img {
         margin-bottom: 60px;
+        .four_row {
+          display: flex;
+          align-items: center;
+          .four_card {
+            display: flex;
+            flex-direction: column;
+          }
+        }
       }
     }
   }
@@ -489,8 +514,27 @@ body {
     .container {
       padding: 0px 50px;
     }
+    .third_container {
+      column-gap: 50px;
+    }
   }
   .four_sec {
+    .container {
+      padding: 0px 50px;
+    }
+    .four_container {
+      display: flex;
+      flex-direction: column;
+      .four_row {
+        flex-direction: column;
+        row-gap: 0px;
+        img:nth-child(1) {
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+  .five_sec {
     .container {
       padding: 0px 50px;
     }
@@ -511,9 +555,151 @@ body {
       }
     }
   }
+  .second_sec {
+    .second_desc {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+      .card {
+        text-align: center;
+      }
+    }
+  }
   .third_sec {
     .third_container {
-      column-gap: 52px;
+      flex-direction: column;
+      row-gap: 50px;
+
+      .right_card {
+        img {
+          contain: content;
+        }
+      }
+      .left_card_2 {
+        order: 2;
+      }
+      .right_card_2 {
+        order: 1;
+      }
+      .left_card {
+        p {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .footer {
+    .foot_container {
+      flex-direction: column;
+      row-gap: 50px;
+      align-items: center;
+      .list_foot {
+        flex-direction: column;
+        row-gap: 50px;
+      }
+      .link_foot {
+        flex-direction: column;
+        row-gap: 70px;
+        img {
+          order: 1;
+        }
+        p {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .header {
+    .container {
+      padding: 0px 10px;
+      nav {
+        padding-top: 45px;
+        margin-bottom: 135px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu {
+          display: block;
+        }
+        button {
+          padding: 10px 20px;
+          background-color: #f8464a;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+        }
+        ul {
+          display: none;
+        }
+      }
+      .header_title {
+        max-width: 665px;
+        h1 {
+          color: #000000;
+          margin-bottom: 30px;
+          font-weight: 800;
+          font-size: 42px;
+          line-height: 58px;
+        }
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 23px;
+          text-align: center;
+          letter-spacing: 0.2px;
+          color: #000000;
+          margin-bottom: 43px;
+        }
+        form {
+          margin-bottom: 84px;
+          position: relative;
+          input {
+            max-width: 335px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: none;
+            padding-left: 20px;
+            &::placeholder {
+              font-family: "Manrope";
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 36px;
+              letter-spacing: 0.2px;
+              color: rgba(0, 0, 0, 0.4);
+            }
+          }
+          .head_btn {
+            display: block;
+            width: 90px;
+            height: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.2px;
+            background: #f84646;
+            border-radius: 8px;
+            color: white;
+            border: none;
+          }
+          button {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .main {
+    .container {
+      .first_sec {
+        .first_cards {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
     }
   }
 }
